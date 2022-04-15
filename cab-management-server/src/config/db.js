@@ -1,10 +1,8 @@
-const connectDB = async () => {
-  try {
-   
-  } catch (error) {
-    console.error(`Error: ${error.message}`.red.underline.bold);
-    process.exit(1);
-  }
-};
-
-module.exports = { connectDB };
+const mariadb = require('mariadb');
+const pool = mariadb.createPool({
+     host: 'localhost', 
+     user:'root', 
+     password: '123456',
+     connectionLimit: 5
+});
+module.exports = { pool };
