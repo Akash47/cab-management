@@ -3,11 +3,11 @@ CREATE DATABASE cabmanagement;
 use cabmanagement;
 CREATE TABLE customer (
     cust_id int NOT NULL AUTO_INCREMENT,
-    lastName varchar(255),
-    firstName varchar(30),
+    last_Name varchar(255),
+    first_Name varchar(30),
     address varchar(100),
 	email varchar(50) UNIQUE,
-	mobileNumber varchar(12),
+	mobile_Number varchar(12),
 	password varchar(50),
 	is_active BOOLEAN,
 	CONSTRAINT customer_pk PRIMARY KEY (cust_id)
