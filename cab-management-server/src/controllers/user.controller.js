@@ -1,5 +1,5 @@
 const asyncHandler = require('express-async-handler');
-const { matchPassword } = require('../services/admin.service');
+const { matchPassword } = require('../services/user.service');
 // Admin login
 module.exports.adminLogin = asyncHandler(async(req, res) => {
     const { email, password,user_type } = req.body;

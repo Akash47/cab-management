@@ -4,7 +4,7 @@
   "description": "",
   "main": " ./src/server.js",
   "scripts": {
-    "start": "node ./src/server.js"
+    "start": "nodemon ./src/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,6 @@
     "mariadb": "^3.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.15"
   }
 }
