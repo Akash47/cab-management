@@ -5,9 +5,10 @@ const cors = require('cors');
 
 const { connectDB } = require('./config/db');
 
-const adminRoutesV1 = require('./routes/v1/user.route');
+const userRoutesV1 = require('./routes/v1/user.route');
 const customerRoutesV1 = require('./routes/v1/customer.route');
 const driverRoutesV1 = require('./routes/v1/driver.route');
+const adminRoutesV1 = require('./routes/v1/admin.route');
 
 const { notFoundError, errorHandler } = require('./middlewares/errorHandlerMiddleware');
 const app = express();
@@ -29,9 +30,10 @@ app.get('/', (req, res) => {
 
 // app.use(express.static('public'));
 
-app.use('/api/v1/user/', adminRoutesV1);
+app.use('/api/v1/user/', userRoutesV1);
 app.use('/api/v1/customer/', customerRoutesV1);
 app.use('/api/v1/driver/', driverRoutesV1);
+app.use('/api/v1/admin/', adminRoutesV1);
 
 app.use(notFoundError);
 app.use(errorHandler);
