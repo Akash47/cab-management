@@ -1,7 +1,7 @@
 const asyncHandler = require('express-async-handler');
-const { insertCustomer } = require('../services/customer.service');
+const { insertCustomer,getCustomer } = require('../services/customer.service');
 // Admin login
-module.exports.customer = asyncHandler(async(req, res) => {
+module.exports.saveCustomer = asyncHandler(async(req, res) => {
     const { lastName, firstName,address, email, mobileNumber, password} = req.body;
     const result = await insertCustomer(lastName, firstName,address, email, mobileNumber, password);
     if (result) { 
@@ -12,4 +12,17 @@ module.exports.customer = asyncHandler(async(req, res) => {
       res.status(401);
       throw new Error(matchResult[1]);
     }
+});
+
+module.exports.getCustomer = asyncHandler(async(req, res) => {
+  // const { lastName, firstName,address, email, mobileNumber, password} = req.body;
+  const result = await getCustomer();
+  if (result) { 
+      res.status(200);
+      res.json({data:result});
+  }
+  else {
+    res.status(401);
+    throw new Error(matchResult[1]);
+  }
 });

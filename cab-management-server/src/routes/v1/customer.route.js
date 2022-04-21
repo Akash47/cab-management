@@ -1,11 +1,12 @@
 const express = require('express');
 const {
-    customer
+    saveCustomer,getCustomer
 } = require('../../controllers/customer.controller');
 
 
 const router = express.Router();
 
-router.post('/customer', customer);
+router.post('/customer', saveCustomer);
+router.get('/customer', getCustomer);
 
 module.exports = router;
