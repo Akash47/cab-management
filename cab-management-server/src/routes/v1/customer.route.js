@@ -6,7 +6,7 @@ const {
 
 const router = express.Router();
 
-router.post('/customer', saveCustomer);
-router.get('/customer', getCustomer);
+router.post('/saveCustomer', saveCustomer);
+router.get('/getAllCustomer', getCustomer);
 
 module.exports = router;
