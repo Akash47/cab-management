@@ -73,7 +73,7 @@ export default function Login() {
               variant="contained"
               sx={{ px: "4rem", mt: "2rem" }}
               onClick={() => {
-                history.replace("/dashboard");
+                history.push("/dashboard");
               }}
             >
               Login

@@ -20,7 +20,7 @@ export const LightThemeConfig = {
       secondary: "#8692A6",
     },
     background: {
-      paper: "#fff",
+      paper: "#f2f2f2",
       default: "#fff",
     },
   },
